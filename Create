@@ -1,0 +1,35 @@
+#include <kipr/botball.h>
+
+int main()
+{
+
+    msleep(500);
+    create_connect();
+    set_create_distance(0);
+    create_drive_direct(-50,-60);//forward to blocks
+    msleep(7000);
+    create_stop();
+    set_create_distance(0);
+    create_drive_direct(50,50);//back to start
+    msleep(6500);
+    set_create_total_angle(0);
+    while (get_create_total_angle() <90)//turn to carts
+    {
+    create_drive_direct(-200,200);
+    
+    }
+    create_stop();
+     msleep(500);
+    set_create_distance(0);
+    create_drive_direct(-50,-50);//forward to carts
+    msleep(1000);
+    set_create_total_angle(0);
+    while (get_create_total_angle()  <45)//turn to people
+    {
+    create_drive_direct(-200,200);
+    
+    
+    printf("Hello World\n");
+    create_disconnect();
+   return 0;
+}
