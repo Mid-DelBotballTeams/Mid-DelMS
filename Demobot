@@ -1,0 +1,42 @@
+#include <kipr/botball.h>
+
+int main()
+{
+    cmpc(0);
+    cmpc(3);
+    while (gmpc(3)<2243)
+    {
+        motor(3,60);
+        if(gmpc(0)<gmpc(3))
+        {
+            motor(0,70);
+        }
+        else
+
+        {
+            motor(0,50);
+        }
+    }
+    ao();
+    cmpc(0);
+    while (gmpc(0)<1000)//turn
+    {
+        motor(0,50);
+        motor(2,0);
+    }
+    while(digital(0)<=0)
+    {
+        if(analog(0)<160)
+        {
+            motor(2,50);
+            motor(0,50);
+        }
+        else
+        {
+            motor(2,10);
+            motor(0,50);
+        }
+
+    }
+    return 0;
+}
