@@ -1,0 +1,145 @@
+int main()
+    
+{ 
+    wait_for_light(1);
+    shut_down_in(119);
+    msleep(1160);
+    
+    enable_servos();//servo go down
+    set_servo_position(0,183);
+    set_servo_position(3,1428);
+    msleep(1000);
+
+    cmpc(0);
+    cmpc(3);
+    while (gmpc(3)<2600)//drive forward
+    {
+        motor(3,55);
+        if(gmpc(0)<gmpc(3))
+        {
+            motor(0,60);
+        }
+        else
+
+        {
+            motor(0,50);
+        }
+    }
+    ao();
+    //cmpc(0);
+    // while (gmpc(0)<2500)//turn
+    // {
+    //    motor(0,50);
+    //  motor(2,0);
+    // }
+    //ao();
+
+    //while(digital(0)==0)
+    // {
+    //     if(analog(0)>1600)
+    //    {
+    //       motor(3,10);
+    //       motor(0,50);
+    //   }
+    //   else
+    //   {
+    //      motor(3,50);
+    //      motor(0,10);
+    //   }
+    // }
+    // ao();
+    // enable_servos();
+    // set_servo_position(3,1400);
+    // msleep(1000);
+    // disable_servos();
+    // enable_servos();
+    // set_servo_position(0,568);
+    // msleep(1000);
+    //disable_servos();
+
+    //cmpc(0);
+    // while (gmpc(0)<1600)
+    //{
+    // motor(0,50);
+    // motor(2,50);
+    // }
+
+    set_servo_position(0,1100);//claw go down
+    set_servo_position(3,1428);
+    msleep(1000);
+
+    cmpc(0);
+    cmpc(3);
+    while (gmpc(3)>-2900)//drive forward
+    {
+        motor(3,-55);
+        if(gmpc(-3000)<gmpc(3))
+        {
+            motor(0,-60);
+        }
+        else
+
+        {
+            motor(0,-50);
+        }
+    }
+        ao(); 
+
+    
+    
+        set_servo_position(0,1500);
+    msleep(200);
+        set_servo_position(3,1228);
+        msleep(300);
+          set_servo_position(3,1028);
+        msleep(300);
+      set_servo_position(3,828);
+        msleep(300);
+     set_servo_position(3,628);
+        msleep(300);
+        set_servo_position(3,428);
+        msleep(300);
+    set_servo_position(0,1300);
+    msleep(200);
+    //disable_servos();
+    
+    
+   
+    
+    cmpc(3);
+    while(gmpc(3)>50)
+    {
+        motor(0,50);
+    }
+    
+    
+     cmpc(0);
+    while(gmpc(0)>10)
+    {
+        motor(0,50);
+        
+    }
+    
+    
+    
+  cmpc(0);
+    cmpc(3);
+    while (gmpc(3)<2000)//drive forward
+    {
+        motor(3,50);
+        if(gmpc(0)<gmpc(3))
+        {
+            motor(0,60);//randomness
+        }
+        else
+
+        {
+            motor(0,50);
+        }
+    }
+        ao(); 
+
+    
+    
+        return 0;
+    }
